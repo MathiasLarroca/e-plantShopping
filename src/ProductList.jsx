@@ -8,7 +8,7 @@ function ProductList({ onHomeClick }) {
     const CartItems = useSelector((state) => state.cart.items);
     const [showCart, setShowCart] = useState(false);
     const [showPlants, setShowPlants] = useState(false);
-    const [addedToCart, setAddedToCart] = useState({});
+    const [addedToCart, setAddedToCart] = useState(false);
 
     const plantsArray = [
         {
@@ -264,6 +264,7 @@ function ProductList({ onHomeClick }) {
         setAddedToCart((prevState) => ({ // Update the local state to reflect that the product has been added
             ...prevState, // Spread the previous state to retain existing entries
             [product.name]: true, // Set the current product's name as a key with value 'true' to mark it as added
+            
         }));
     };
 
